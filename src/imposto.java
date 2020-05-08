@@ -8,7 +8,7 @@ public class imposto {
 		Scanner sc = new Scanner(System.in);
 		
 		double salario, servico, capital, gastosMedicos, gastosEducacionais, impSalario, impServicos, impCapital, impostoTotal;
-		double salarioMensal, deducao, impostoDevido;
+		double salarioMensal, deducao, maximoDedutivel, impostoDevido;
 		
 		//Leitura dos dados
 		
@@ -41,6 +41,7 @@ public class imposto {
 		impostoTotal = impSalario + impServicos + impCapital;
 		deducao = gastosMedicos + gastosEducacionais;
 		
+		maximoDedutivel = (impostoTotal * 30) / 100;
 		
 		//Relatorio
 		System.out.println();
@@ -50,6 +51,10 @@ public class imposto {
 		System.out.printf("Imposto sobre salário = %.2f%n", impSalario);
 		System.out.printf("Imposto sobre serviços = %.2f%n", impServicos);
 		System.out.printf("Imposto sobre ganho de capital = %.2f%n", impCapital);
+		System.out.println();
+		System.out.println("DEDUÇÕES:");
+		System.out.printf("Máximo dedutível: %.2f%n", maximoDedutivel);
+		System.out.printf("Gastos dedutíveis: %.2f%n", deducao);
 		
 		sc.close();
 	}
